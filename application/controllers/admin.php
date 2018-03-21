@@ -90,16 +90,16 @@ class Admin extends CI_Controller
 				'keamanan' => $keamanan
 			);
 
-		$simpan =$this->M_admin->update('hrd_email_config', $data);
+		$simpan =$this->M_admin->update('hrd_config_email', $data);
 		if($simpan)
 		{
 			$this->session->set_flashdata('pesan1','Konfigurasi Email Berhasil Diperbaharui');
-			redirect(base_url().'email_config');
+			redirect(base_url().'admin/email_config');
 		}
 		else
 		{
 			$this->session->set_flashdata('pesan2','Konfigurasi Email Gagal Diperbaharui');
-			redirect(base_url().'email_config');	
+			redirect(base_url().'admin/email_config');	
 		}
 	}
 }

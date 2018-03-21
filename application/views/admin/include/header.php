@@ -17,7 +17,10 @@
   <link rel="stylesheet" href="<?php echo base_url().'assets/admin/css/uniform.css' ?>" />
   <link rel="stylesheet" href="<?php echo base_url().'assets/admin/css/select2.css' ?>" />
   <link rel="stylesheet" href="<?php echo base_url().'assets/admin/css/bootstrap-wysihtml5.css' ?>" />
+  <script src="<?php echo base_url().'assets/timepicker/jquery.timepicker.min.css' ?>"></script>
   <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/sweetalert-master/dist/sweetalert.css' ?>">
+  <link rel="stylesheet" href="<?php echo base_url().'assets/jquery-ui-timepicker/jquery.ui.timepicker.css' ?>" >
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/jquery-ui-timepicker/include/ui-1.10.0/ui-lightness/jquery-ui-1.10.0.custom.min.css' ?>">
 </head>
 <body>
 
@@ -46,17 +49,17 @@
       			</ul>
     		</li>
     		<li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
-    		<li class=""><a title="" href="<?php echo base_url().'Admin/logout' ?>"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+    		<li class=""><a title="" href="<?php echo base_url().'login/logout' ?>"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
     		<li  class="dropdown" id="profile-messages" >
     			<a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle">
-    				<i class="icon icon-user"></i>  <span class="text"><?php echo $this->session->userdata('nama'); ?></span><b class="caret"></b>
+    				<i class="icon icon-user"></i>  <span class="text"><?php echo $this->session->userdata('full_name'); ?></span><b class="caret"></b>
     			</a>
       			<ul class="dropdown-menu">
         			<li><a href="#"><i class="icon-user"></i> My Profile</a></li>
         			<li class="divider"></li>
         			<li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
         			<li class="divider"></li>
-        			<li><a href="<?php echo base_url().'Admin/logout' ?>"><i class="icon-key"></i> Log Out</a></li>
+        			<li><a href="<?php echo base_url().'login/logout' ?>"><i class="icon-key"></i> Log Out</a></li>
       			</ul>
     		</li>
   		</ul>
@@ -81,15 +84,33 @@
             <li><a href="<?php echo base_url().'media' ?>">Media</a></li>
           </ul>
         </li>
+        <li class="submenu">
+          <a href="#">
+            <i class="icon icon-book"></i> <span>Data Master</span>
+          </a>
+            <ul>
+              <!--<li><a href="<?php echo base_url().'admin/kebangsaan' ?>"><i class="icon icon-user"></i> <span>Kebangsaan</span></a></li>-->
+              <li><a href="">Data Karyawan</a></li>
+              <li><a href="">Data Divisi</a></li>
+              <li><a href="">Data Jabatan</a></li>
+              
+              <li><a href="<?php echo base_url().'admin/provinsi' ?>"><span>Data Provinsi</span></a></li>
+              <li><a href="<?php echo base_url().'kota' ?>"><span>Data Kota</span></a></li>
+            </ul>
+        </li>
     		<li class="submenu">
     			<a href="#">
     				<i class="icon icon-cog"></i> <span>Confguration</span>
     			</a>
       			<ul>
-        			<li><a href="<?php echo base_url().'admin/email_config' ?>"><i class="icon icon-user"></i> <span>Konfigurasi Email</span></a></li>
-              <li><a href="<?php echo base_url().'admin/kebangsaan' ?>"><i class="icon icon-user"></i> <span>Kebangsaan</span></a></li>
-              <li><a href="<?php echo base_url().'admin/provinsi' ?>"><i class="icon icon-user"></i> <span>Provinsi</span></a></li>
-              <li><a href="<?php echo base_url().'kota' ?>"><i class="icon icon-user"></i> <span>Kota</span></a></li>
+        			<li><a href="<?php echo base_url().'admin/email_config' ?>">Konfigurasi Email</a></li>
+              <li><a href="<?php echo base_url().'hari_libur' ?>">Hari Libur</a></li>
+              <li><a href="<?php echo base_url().'periode_absen' ?>">Periode Absensi</a></li>
+              <li><a href="<?php echo base_url().'absensi' ?>">Absensi</a></li>
+              <li><a href="<?php echo base_url().'shift' ?>">Shift</a></li>
+              <li><a href="<?php echo base_url().'user_admin' ?>">User</a></li>
+              <li><a href="">User Security</a></li>
+              <li><a href="<?php echo base_url().'konfigurasi' ?>">Konfigurasi Global</a></li>
       			</ul>
     		</li>
   		</ul>

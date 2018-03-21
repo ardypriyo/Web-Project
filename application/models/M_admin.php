@@ -10,7 +10,7 @@ class M_admin extends CI_Model
 	
 	function cari_setting()
 	{
-		return $this->db->query("SELECT * FROM hrd_email_config")->result_array();
+		return $this->db->query("SELECT * FROM hrd_config_email")->result_array();
 	}
 
 	function insert ($table, $data)
